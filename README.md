@@ -6,9 +6,9 @@ It works by using [**Server-Sent Events (SSE)**](https://developer.mozilla.org/e
 ```javascript
     let sourceEndpoint = 'http://localhost:8888/events';
     let evtSource = new EventSource(sourceEndpoint);
-	evtSource.addEventListener("update", function(e) {
-		myElement.innerHTML = e.data; // e.data contains your data string
-	}, false);
+    evtSource.addEventListener("update", function(e) {
+	myElement.innerHTML = e.data; // e.data contains your data string
+    }, false);
 ```
 *P.S You might be thinking - why LONG-POLLING? when we are talking about SSE here.. Well, I couldn't manage to keep-alive the established connection yet, so I chose the second best option - long polling.*
 
@@ -20,6 +20,9 @@ Collecting data is as simple as ...
         body: "YOUR PRECIOUS DATA" + JSON.stringify({"json": "is Allowed Too"})
     });
 ```
+
+# Use-Cases
+You could use this for ... obviously collecting data, such as logs, occured game events, notifications etc...
 
 # Preview
 ![AHK|Remote Data Collector Preview](https://giant.gfycat.com/GrayGreenIrrawaddydolphin.gif)
