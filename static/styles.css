@@ -1,0 +1,41 @@
+* {
+	margin:0;
+	padding:0;
+	border:0;
+}
+
+body {
+	background-color: black;
+	color: white;
+}
+
+.title {
+	padding: 5%;
+	padding-bottom: 2%;
+	text-decoration: underline;
+	text-align: center;
+	user-select: none;
+}
+
+.box {
+	border: 1px solid white;
+	height: calc(70vh - 40px);
+	width: 65vw;
+	margin: 0 auto;
+	overflow-y: scroll;
+}
+
+.box__container {
+	color: white;
+	font-size: 24px;
+	padding: 12px;
+}
+
+::-webkit-scrollbar {
+	width: 6px;
+	height: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+	background: #c5c5c5;
+}

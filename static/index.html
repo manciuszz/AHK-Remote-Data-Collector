@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang='en'>
+	<head>
+		<meta charset='utf-8'>
+		<title>{{title}}</title>
+		<link rel="stylesheet" type="text/css" href="/asset/static/styles.css">
+	</head>
+	<body>
+		<header>
+			<h1 class="title">{{title}}</h1>
+		</header>
+		<section>
+			<div class="box">
+				<div class="box__container">
+					{{msg}}
+				</div>
+			</div>
+		</section>
+	</body>
+	<script>
+		let container = document.querySelector(".box__container");
+		let evtSource = new EventSource('http://localhost:8888/events');
+		evtSource.addEventListener("update", function(e) {
+			container.innerHTML = e.data;
+		}, false);
+	</script>
+</html>
